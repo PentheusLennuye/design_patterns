@@ -8,7 +8,10 @@ import pizza
 
 
 class PizzaStore(ABC):
-    '''Abstract class setting up Factory Method Pattern'''
+    '''Abstract class setting up Factory Method Pattern. The "create_pizza"
+       methods are Factory Methods as they return an instantiated class
+       depending on the argument'''
+
     def order_pizza(self, pizza_type: str) -> pizza.Pizza:
         pizza = self._create_pizza(pizza_type)
 

@@ -1,5 +1,4 @@
-# The FACTORY METHOD pattern
+# The ABSTRACT FACTORY pattern
 
-The FACTORY METHOD pattern defines an interface for creating an object, but
-lets subclasses decide with class to instantiate. FACTORY METHOD lets a class
-defer instantiation to subclasses.
+The ABSTRACT FACTORY pattern provides an interface for creating families of
+related or dependent objects without specifying their concrete classes.

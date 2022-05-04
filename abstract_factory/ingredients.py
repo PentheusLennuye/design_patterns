@@ -68,7 +68,7 @@ class ThinCrustDough:
     pass
 
 
-class PizzaIngredientFactory(metaclass=ABCMeta):  # interface
+class PizzaIngredientAbstractFactory(metaclass=ABCMeta):  # interface
     '''Demonstrates the ABSTRACT FACTORY'''
     @classmethod
     def __subclasshook__(cls, subclass):
@@ -111,7 +111,11 @@ class PizzaIngredientFactory(metaclass=ABCMeta):  # interface
         raise NotImplementedError
 
 
-class NYPizzaIngredientFactory(PizzaIngredientFactory):
+class NYPizzaIngredientFactory(PizzaIngredientAbstractFactory):
+    '''Produces a different implementation for the products than Chicago. Each
+       method returns an instantiated object. Each method is, in fact, a
+       Factory Method.'''
+
     @staticmethod
     def create_dough():
         return ThinCrustDough()
@@ -137,7 +141,7 @@ class NYPizzaIngredientFactory(PizzaIngredientFactory):
         return FreshClams()
 
 
-class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
+class ChicagoPizzaIngredientFactory(PizzaIngredientAbstractFactory):
     @staticmethod
     def create_dough():
         return ThickCrustDough()

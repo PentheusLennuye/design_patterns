@@ -4,11 +4,11 @@ File: design_patterns/factory/pizza.py
 
 from abc import ABC, abstractmethod
 
-from ingredients import PizzaIngredientFactory
+from ingredients import PizzaIngredientAbstractFactory
 
 
 class Pizza(ABC):  # ABC for Abstract, ABCMeta for Interface
-    '''The "Product" class and subclasses'''
+    '''The "Product" class and subclasses. '''
     def __init__(self):
         self.name = None
         self.dough = None
@@ -42,7 +42,7 @@ class Pizza(ABC):  # ABC for Abstract, ABCMeta for Interface
 
 
 class CheesePizza(Pizza):
-    def __init__(self, ingredient_factory: PizzaIngredientFactory):
+    def __init__(self, ingredient_factory: PizzaIngredientAbstractFactory):
         self.ingredient_factory = ingredient_factory
 
     def prepare(self):
@@ -53,7 +53,7 @@ class CheesePizza(Pizza):
 
 
 class ClamPizza(Pizza):
-    def __init__(self, ingredient_factory: PizzaIngredientFactory):
+    def __init__(self, ingredient_factory: PizzaIngredientAbstractFactory):
         self.ingredient_factory = ingredient_factory
 
     def prepare(self):
@@ -65,7 +65,7 @@ class ClamPizza(Pizza):
 
 
 class VeggiePizza(Pizza):
-    def __init__(self, ingredient_factory: PizzaIngredientFactory):
+    def __init__(self, ingredient_factory: PizzaIngredientAbstractFactory):
         self.ingredient_factory = ingredient_factory
 
     def prepare(self):
@@ -77,7 +77,7 @@ class VeggiePizza(Pizza):
 
 
 class PepperoniPizza(Pizza):
-    def __init__(self, ingredient_factory: PizzaIngredientFactory):
+    def __init__(self, ingredient_factory: PizzaIngredientAbstractFactory):
         self.ingredient_factory = ingredient_factory
 
     def prepare(self):

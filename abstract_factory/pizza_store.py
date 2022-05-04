@@ -9,7 +9,10 @@ from pizza import Pizza, CheesePizza, VeggiePizza, ClamPizza, PepperoniPizza
 from ingredients import NYPizzaIngredientFactory, ChicagoPizzaIngredientFactory
 
 class PizzaStore(ABC):
-    '''Abstract class setting up Factory Method Pattern'''
+    '''The Pizza Store is the client of the PizzaIngredientAbstractFactory. It
+       is written against the abstract factory interface, and then composed at
+       runtime with the concrete subclasses of that factory.'''
+
     def order_pizza(self, pizza_type: str) -> Pizza:
         pizza = self._create_pizza(pizza_type)
 
